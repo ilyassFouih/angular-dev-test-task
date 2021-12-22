@@ -38,5 +38,9 @@ https://openweathermap.org/api/geocoding-api
     -   NgBootstrap for the UI (simple and fast)
 -   [] Dev excution
     -   [] Architecture & generating components.
+        -   [] install and config NgBoostrap
+        -   [] install and config NGRX
+        -   [] Folder structure
+        -   [] Config routes/modules (not found, forcast, shared)
     -   [] UI
     -   [] state & logic
