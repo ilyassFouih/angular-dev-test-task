@@ -23,7 +23,17 @@ https://openweathermap.org/api/geocoding-api
 
 # TODO: 
 - [x] Functional analysis `(Check assets/functional-analysis folder)`
-- [] Technical analysis 
+- [x] Technical analysis 
+    - We have duplicated table with the only difference of column name and column number (8 vs 7)
+    ```html
+         <!-- this component will listen to table type and then change columns accordinly -->
+        <app-dynamic-forcast-table [tableType]="tableType">
+            <!-- this component will be responsable of displying ColumnsTempertaure and CityColumn  -->
+            <app-forcast-table-ui [cityColumn]="cityColumn" [TemperaturesColumns]="TempColumns" ></app-forcast-table-ui>
+        </app-dynamic-forcast-table></app-dynamic-forcast-table>
+    ```
+    - We need to integrate NGRX.
+    - Type and search component for searching and displying cities. 
 - [] Dev excution
     - [] Architecture & generating components.
     - [] UI 
