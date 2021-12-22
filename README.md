@@ -22,7 +22,7 @@ https://openweathermap.org/api/geocoding-api
 -   Please use repositories formatting.
 
 # TODO: 
-- [] Functional analysis
+- [x] Functional analysis `(Check assets/functional-analysis folder)`
 - [] Technical analysis 
 - [] Dev excution
     - [] Architecture & generating components.
