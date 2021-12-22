@@ -40,7 +40,8 @@ https://openweathermap.org/api/geocoding-api
     -   [] Architecture & generating components.
         -   [x] install and config NgBoostrap
         -   [x] install NGRX
-        -   [] Folders structure
-        -   [] Config routes/modules (not found, forcast, shared)
+        -   [x] Folders structure
+        -   [x] Config routes/modules (not found, forcast, shared)
+        -   [] Models
     -   [] UI
     -   [] state & logic
