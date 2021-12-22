@@ -21,10 +21,11 @@ https://openweathermap.org/api/geocoding-api
 -   Tests are not necessary.
 -   Please use repositories formatting.
 
-# TODO: 
-- [x] Functional analysis `(Check assets/functional-analysis folder)`
-- [x] Technical analysis 
-    - We have duplicated table with the only difference of column name and column number (8 vs 7)
+# TODO:
+
+-   [x] Functional analysis `(Check assets/functional-analysis folder)`
+-   [x] Technical analysis
+    -   We have duplicated table with the only difference of column name and column number (8 vs 7)
     ```html
          <!-- this component will listen to table type and then change columns accordinly -->
         <app-dynamic-forcast-table [tableType]="tableType">
@@ -32,9 +33,10 @@ https://openweathermap.org/api/geocoding-api
             <app-forcast-table-ui [cityColumn]="cityColumn" [TemperaturesColumns]="TempColumns" ></app-forcast-table-ui>
         </app-dynamic-forcast-table></app-dynamic-forcast-table>
     ```
-    - We need to integrate NGRX.
-    - Type and search component for searching and displying cities. 
-- [] Dev excution
-    - [] Architecture & generating components.
-    - [] UI 
-    - [] state & logic
+    -   We need to integrate NGRX.
+    -   Type and search component for searching and displying cities.
+    -   NgBootstrap for the UI (simple and fast)
+-   [] Dev excution
+    -   [] Architecture & generating components.
+    -   [] UI
+    -   [] state & logic
