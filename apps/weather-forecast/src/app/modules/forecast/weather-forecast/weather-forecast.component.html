@@ -1,0 +1,7 @@
+<bp-select-from-list
+	[(selected)]="selected"
+	[options]="['Daily', 'Hourly']"
+	label="Forecast type"
+></bp-select-from-list>
+<bp-forecast-table-ui></bp-forecast-table-ui>
+{{ selected }}

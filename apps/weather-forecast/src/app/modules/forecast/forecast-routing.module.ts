@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ForecastTableUIComponent } from '@weather-forcast/shared/forecast-table-ui';
+import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 const routes: Routes = [
-	{ path: "",component:ForecastTableUIComponent }
+	{ path: "",component:WeatherForecastComponent }
 ];
 
 @NgModule({

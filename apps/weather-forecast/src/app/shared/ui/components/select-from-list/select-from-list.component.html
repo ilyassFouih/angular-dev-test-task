@@ -1,0 +1,9 @@
+<div class="form-group">
+	<label> {{ label }} </label>
+	<select [ngModel]="selected" (ngModelChange)="onSelectedChange($event)" class="form-control">
+		<option disabled class="text-center" [value]="SELECT_OPTION">--- please select an option ---</option>
+		<option class="text-center" *ngFor="let item of options">
+			{{ item }}
+		</option>
+	</select>
+</div>
