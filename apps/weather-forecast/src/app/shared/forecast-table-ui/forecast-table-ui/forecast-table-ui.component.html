@@ -1,0 +1,26 @@
+<ng-container *ngIf="forcastTableConfig">
+	<div class="d-flex align-items-center justify-centent-center">
+		<table class="table table-striped table-inverse table-responsive">
+			<thead class="thead-inverse">
+				<tr>
+					<th>Found City</th>
+					<th *ngFor="let item of forcastTableConfig.tempColumns">
+						{{ item.colValue }}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-center">
+					<td scope="row">
+						<h3>{{ forcastTableConfig?.city?.name }}</h3>
+						<h4>({{ forcastTableConfig?.city?.country }})</h4>
+						<p>{{ forcastTableConfig?.city?.tempValue }}°c</p>
+					</td>
+					<td *ngFor="let item of forcastTableConfig.tempColumns">
+						{{ item.colTemp }}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</ng-container>
