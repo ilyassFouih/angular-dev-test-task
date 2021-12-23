@@ -42,6 +42,6 @@ https://openweathermap.org/api/geocoding-api
         -   [x] install NGRX
         -   [x] Folders structure
         -   [x] Config routes/modules (not found, forcast, shared)
-        -   [] Models
+        -   [x] Models
     -   [] UI
     -   [] state & logic
