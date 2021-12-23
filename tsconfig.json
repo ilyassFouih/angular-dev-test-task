@@ -4,7 +4,9 @@
 		"paths": {
 			"@bp/line-chart/models": ["libs/line-chart/models/src/index.ts"],
 			"@bp/line-chart/services": ["libs/line-chart/services/src/index.ts"],
-			"@bp/weather-forecast/services": ["libs/weather-forecast/services/src/index.ts"]
+			"@bp/weather-forecast/services": ["libs/weather-forecast/services/src/index.ts"],
+			"@weather-forcast/shared/*": ["apps/weather-forecast/src/app/shared/*"],
+			"@weather-forcast/core/*": ["apps/weather-forecast/src/app/core/*"]
 		},
 		"baseUrl": ".",
 		"rootDir": ".",
@@ -21,7 +23,7 @@
 		"noUnusedParameters": false,
 		"noEmitHelpers": true,
 		"noLib": false,
-		"strictNullChecks": true,
+		"strictNullChecks": false,
 		"sourceMap": true,
 		"inlineSourceMap": false,
 		"declaration": false,

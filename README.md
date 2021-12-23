@@ -37,11 +37,12 @@ https://openweathermap.org/api/geocoding-api
     -   Type and search component for searching and displying cities.
     -   NgBootstrap for the UI (simple and fast)
 -   [] Dev excution
-    -   [] Architecture & generating components.
+    -   [x] Architecture & generating components.
         -   [x] install and config NgBoostrap
         -   [x] install NGRX
         -   [x] Folders structure
         -   [x] Config routes/modules (not found, forcast, shared)
         -   [x] Models
     -   [] UI
+        -   [] Table forecast UI
     -   [] state & logic
