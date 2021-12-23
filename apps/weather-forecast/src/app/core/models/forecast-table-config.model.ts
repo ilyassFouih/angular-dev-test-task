@@ -9,7 +9,7 @@ type TempColumns={
 }
 export interface ForecastTableConfig {
 	city:CityColumn
-	tempColumns:TempColumns
+	tempColumns:TempColumns[]
 	tableType:"DAILY"|"HOURLY"
 }
 
