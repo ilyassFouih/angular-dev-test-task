@@ -17,7 +17,7 @@
 						<p>{{ forcastTableConfig?.city?.tempValue }}°c</p>
 					</td>
 					<td *ngFor="let item of forcastTableConfig.tempColumns">
-						{{ item.colTemp }}
+						{{ item?.colTemp }}
 					</td>
 				</tr>
 			</tbody>

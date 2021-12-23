@@ -1,4 +1,4 @@
-import { ForecastTableConfig } from "@weather-forcast/core/models";
+import { ForecastTableConfig, FORECAST_TYPE } from "@weather-forcast/core/models";
 
 export const FORECAST_TABLE_MOCK:ForecastTableConfig={
 	city:{
@@ -6,7 +6,7 @@ export const FORECAST_TABLE_MOCK:ForecastTableConfig={
 		name:"Chicago",
 		tempValue:284.07
 	},
-	tableType:"DAILY",
+	tableType:FORECAST_TYPE.DAILY,
 	tempColumns:[
 		{
 			colTemp:279.79,
