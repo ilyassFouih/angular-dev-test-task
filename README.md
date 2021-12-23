@@ -44,5 +44,7 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Config routes/modules (not found, forcast, shared)
         -   [x] Models
     -   [] UI
-        -   [] Table forecast UI
+        -   [x] Table forecast UI
+        -   [x] Select UI
+        -   [] TypeAhead and select UI
     -   [] state & logic
