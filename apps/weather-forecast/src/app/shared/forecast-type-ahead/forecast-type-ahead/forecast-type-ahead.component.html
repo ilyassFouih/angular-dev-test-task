@@ -1,0 +1,15 @@
+<div class="form-group">
+	<label> {{ label }} </label>
+	<input
+		[(ngModel)]="searchText"
+		[ngbTypeahead]="onSearchForCity"
+		type="text"
+		class="form-control"
+		aria-describedby="helpId"
+		[placeholder]="placeholder"
+	/>
+	<small *ngIf="isLoading" class="form-text text-muted">
+		<img width="35px" src="assets/svgs/spinner.svg" />
+		Loading...
+	</small>
+</div>

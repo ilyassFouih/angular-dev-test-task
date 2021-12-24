@@ -1,8 +1,28 @@
-<bp-select-from-list
-	[(selected)]="selected"
-	[options]="['Daily', 'Hourly']"
-	label="Forecast type"
-></bp-select-from-list>
-<bp-button text="search"></bp-button>
-<bp-forecast-table-ui></bp-forecast-table-ui>
+<div class="container">
+	<div class="row mb-3">
+		<bp-forecast-type-ahead
+			class="col-12-sm col-6"
+			label="city name:"
+			placeholder="enter a city name ..."
+			[foundCities$]="cities$"
+			[isLoading]="true"
+		>
+		</bp-forecast-type-ahead>
+
+		<bp-select-from-list
+			class="col-12-sm col-4"
+			[(selected)]="selected"
+			[options]="['Daily', 'Hourly']"
+			label="Forecast type"
+		></bp-select-from-list>
+
+		<bp-button class="col-12-sm d-flex align-items-center col-2" text="search"> </bp-button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<bp-forecast-table-ui></bp-forecast-table-ui>
+		</div>
+	</div>
+</div>
+
 {{ selected }}
