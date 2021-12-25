@@ -52,4 +52,8 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Select UI
         -   [x] Button
         -   [x] TypeAhead and select UI
-    -   [] state & logic
+    -   ## [] state & logic
+-   [x] CD to azure
+    -   [x] creating and configuting azur account.
+    -   [x] Github Action config.
+    -   [x] automatic deploy to AZURE static site when commit in prod
