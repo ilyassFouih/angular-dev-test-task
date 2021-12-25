@@ -6,7 +6,8 @@
 			"@bp/line-chart/services": ["libs/line-chart/services/src/index.ts"],
 			"@bp/weather-forecast/services": ["libs/weather-forecast/services/src/index.ts"],
 			"@weather-forcast/shared/*": ["apps/weather-forecast/src/app/shared/*"],
-			"@weather-forcast/core/*": ["apps/weather-forecast/src/app/core/*"]
+			"@weather-forcast/core/*": ["apps/weather-forecast/src/app/core/*"],
+			"@weather-forcast/state/*": ["apps/weather-forecast/src/app/state/*"]
 		},
 		"baseUrl": ".",
 		"rootDir": ".",

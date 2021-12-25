@@ -1,43 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { WeatherForecastApiService } from '@bp/weather-forecast/services';
-//import { CITIES_MOCKS } from '@weather-forcast/core/mocks/cities.mocks';
+import { Store } from '@ngrx/store';
 import { CitiesModel } from '@weather-forcast/core/models';
-import { distinctUntilChanged, filter, map, Observable, of, tap } from 'rxjs';
+import { distinctUntilChanged, filter, map, Observable, tap } from 'rxjs';
+import { searchForCity, newCities } from '@weather-forcast/state/cities/cities.actions';
+import { CITIES_MOCKS } from '@weather-forcast/core/mocks/cities.mocks';
 
 @Component({
 	selector: 'bp-search-for-city',
 	templateUrl: './search-for-city.component.html',
-	styleUrls: ['./search-for-city.component.css']
+	styleUrls: ['./search-for-city.component.css'],
 })
 export class SearchForCityComponent implements OnInit {
-
-	cities$:Observable<CitiesModel[]>=of([])
-	searchText$:Observable<string>
+	cities$: Observable<CitiesModel[]>
+	searchText$: Observable<string>;
 	constructor(
-		private activatedRoute:ActivatedRoute,
-		private router:Router,
-		private weatherService:WeatherForecastApiService
-	){}
-
+		private activatedRoute: ActivatedRoute, 
+		private router: Router, 
+		private store: Store
+	) {}
 
 	ngOnInit(): void {
-		this.searchText$=this.activatedRoute
-			.queryParams
-			.pipe(
-				map(item=>item.cityName),
-				filter(item=>item),
-				distinctUntilChanged(),
-				tap(text=>{
-				//TODO: call Reducer here 
-					this.weatherService.searchForCityByName(text).subscribe(res=>console.log(res))
-				})
-			)
+		this.searchText$ = this.activatedRoute.queryParams.pipe(
+			map(item => item.cityName),
+			filter(item => item),
+			distinctUntilChanged(),
+			tap(cityName => {
+				if (cityName) this.store.dispatch(searchForCity({ cityName }));
+				else this.store.dispatch(newCities({ cities: CITIES_MOCKS }));
+			})
+		);
 	}
 
-	onSearchCityChanged(cityName:string){
-		this.router.navigate([],{queryParams:{cityName}})
+	onSearchCityChanged(cityName: string) {
+		this.router.navigate([], { queryParams: { cityName } });
 	}
-
-	
 }
