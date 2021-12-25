@@ -3,7 +3,7 @@ import { CitiesModel } from '@weather-forcast/core/models';
 import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction, switchMap, tap } from 'rxjs';
 
 @Component({
-	selector: 'bp-forecast-type-ahead',
+	selector: 'bp-forecast-type-ahead-ui',
 	templateUrl: './forecast-type-ahead.component.html',
 	styleUrls: ['./forecast-type-ahead.component.css']
 })
