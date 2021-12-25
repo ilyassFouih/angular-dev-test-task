@@ -1,8 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CitiesModel, FORECAST_TYPE,ForecatsWeatherModel} from "@weather-forcast/core/models";
 
-@Injectable({providedIn: 'root'})
+const BASE_URL_CITY="http://api.openweathermap.org/geo/1.0/direct"
+const BASE_URL_FORECAST="https://api.openweathermap.org/data/2.5/onecall"
+
+@Injectable()
 export class WeatherForecastApiService {
-
 	private _apiKey = '010721642521f31b0fbc8c3831d45951';
+
+	constructor(private httpClient:HttpClient){
+
+	}
+
+	searchForCityByName(cityName:string){
+		return this.httpClient
+			.get<CitiesModel[]>(`${BASE_URL_CITY}?q=${cityName}&limit=5&appid=${this._apiKey}`)
+	}
+
+	weatherByLongAndLat(lon:number,lat:number,typeWeather:FORECAST_TYPE){
+		const typeWeatherMin=typeWeather.toLowerCase()
+		return this.httpClient
+			.get<ForecatsWeatherModel>(`${BASE_URL_FORECAST}?lat=${lat}&lon=${lon}&exclude=current,minutely,${typeWeatherMin},alerts&appid={API key}`)
+	}
 
 }

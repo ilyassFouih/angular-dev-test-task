@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WeatherForecastApiService } from '@bp/weather-forecast/services';
 //import { CITIES_MOCKS } from '@weather-forcast/core/mocks/cities.mocks';
 import { CitiesModel } from '@weather-forcast/core/models';
 import { distinctUntilChanged, filter, map, Observable, of, tap } from 'rxjs';
@@ -15,7 +16,8 @@ export class SearchForCityComponent implements OnInit {
 	searchText$:Observable<string>
 	constructor(
 		private activatedRoute:ActivatedRoute,
-		private router:Router
+		private router:Router,
+		private weatherService:WeatherForecastApiService
 	){}
 
 
@@ -28,6 +30,7 @@ export class SearchForCityComponent implements OnInit {
 				distinctUntilChanged(),
 				tap(text=>{
 				//TODO: call Reducer here 
+					this.weatherService.searchForCityByName(text).subscribe(res=>console.log(res))
 				})
 			)
 	}

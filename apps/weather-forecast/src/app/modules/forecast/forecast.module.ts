@@ -9,6 +9,7 @@ import { ForecastTypeAheadModule } from '@weather-forcast/shared/forecast-type-a
 import { SearchForCityComponent } from './search-for-city/search-for-city.component';
 import { SelectForecastTypeComponent } from './select-forecast-type/select-forecast-type.component';
 import { ForecastResultTableComponent } from './forecast-result-table/forecast-result-table.component';
+import { WeatherForecastServicesModule } from '@bp/weather-forecast/services';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ForecastResultTableComponent } from './forecast-result-table/forecast-r
 		ForecastTableUiModule,
 		ForecastTypeAheadModule,
 		UiModule,
-		ForecastRoutingModule
+		ForecastRoutingModule,
+		WeatherForecastServicesModule
 	]
 })
 export class ForecastModule { }
