@@ -2,6 +2,8 @@
 	label="city name:"
 	placeholder="enter a city name ..."
 	[foundCities$]="cities$"
+	[searchText]="searchText$ | async"
+	(searchTextChnage)="onSearchCityChanged($event)"
 	[isLoading]="true"
 >
 </bp-forecast-type-ahead-ui>
