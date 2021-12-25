@@ -6,11 +6,17 @@ import { ForecastTableUiModule } from '@weather-forcast/shared/forecast-table-ui
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 import { UiModule } from '@weather-forcast/shared/ui/ui.module';
 import { ForecastTypeAheadModule } from '@weather-forcast/shared/forecast-type-ahead/forecast-type-ahead.module';
+import { SearchForCityComponent } from './search-for-city/search-for-city.component';
+import { SelectForecastTypeComponent } from './select-forecast-type/select-forecast-type.component';
+import { ForecastResultTableComponent } from './forecast-result-table/forecast-result-table.component';
 
 
 @NgModule({
 	declarations: [
-		WeatherForecastComponent
+		WeatherForecastComponent,
+		SearchForCityComponent,
+		SelectForecastTypeComponent,
+		ForecastResultTableComponent
 	],
 	imports: [
 		CommonModule,

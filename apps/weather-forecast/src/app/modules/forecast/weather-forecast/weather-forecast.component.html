@@ -1,26 +1,12 @@
 <div class="container">
 	<div class="row mb-3">
-		<bp-forecast-type-ahead-ui
-			class="col-12-sm col-6"
-			label="city name:"
-			placeholder="enter a city name ..."
-			[foundCities$]="cities$"
-			[isLoading]="true"
-		>
-		</bp-forecast-type-ahead-ui>
-
-		<bp-select-from-list-ui
-			class="col-12-sm col-4"
-			[(selected)]="selected"
-			[options]="['Daily', 'Hourly']"
-			label="Forecast type"
-		></bp-select-from-list-ui>
-
+		<bp-search-for-city class="col-12-sm col-6"></bp-search-for-city>
+		<bp-select-forecast-type class="col-12-sm col-4"></bp-select-forecast-type>
 		<bp-button class="col-12-sm d-flex align-items-center col-2" text="search"> </bp-button>
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<bp-forecast-table-ui></bp-forecast-table-ui>
+			<bp-forecast-result-table></bp-forecast-result-table>
 		</div>
 	</div>
 </div>
