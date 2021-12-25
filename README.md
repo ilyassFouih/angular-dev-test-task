@@ -52,7 +52,10 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Select UI
         -   [x] Button
         -   [x] TypeAhead and select UI
-    -   ## [] state & logic
+    -   [] state & logic
+        -   [] Route, state and binding logic for typeahead.
+        -   [] Route, state and binding logic for forecastType.
+        -   [] Route, state and lodings logic for table result.
 -   [x] CD to azure
     -   [x] creating and configuting azur account.
     -   [x] Github Action config.
