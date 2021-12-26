@@ -5,4 +5,4 @@ export enum AlertActionsType{
 	newInfo="new info message"
 }
 export const newAlertError=createAction(AlertActionsType.newError,props<{title:string,message:string}>())
-export const newAlertInfo=createAction(AlertActionsType.newError,props<{title:string,message:string}>())
+export const newAlertInfo=createAction(AlertActionsType.newInfo,props<{title:string,message:string}>())
