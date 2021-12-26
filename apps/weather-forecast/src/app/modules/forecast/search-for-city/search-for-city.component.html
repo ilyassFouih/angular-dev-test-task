@@ -4,6 +4,6 @@
 	[foundCities$]="cities$"
 	[searchText]="searchText$ | async"
 	(searchTextChnage)="onSearchCityChanged($event)"
-	[isLoading]="true"
+	[isLoading]="isLoadingCities$ | async"
 >
 </bp-forecast-type-ahead-ui>

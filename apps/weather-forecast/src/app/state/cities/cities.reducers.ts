@@ -11,7 +11,8 @@ export const CitiesReducer=createReducer(
 	initCitiesState,
 	on(searchForCity,(state,{cityName})=>({ 
 		...state,
-		status:CitiesStateStatus.LOADING
+		status:CitiesStateStatus.LOADING,
+		cities:[]
 	})),
 	on(newCities,((state,{cities})=>({
 		...state,
