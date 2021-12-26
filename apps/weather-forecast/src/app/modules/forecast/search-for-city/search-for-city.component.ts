@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CitiesModel } from '@weather-forcast/core/models';
 import { distinctUntilChanged, map, Observable, tap } from 'rxjs';
-import { searchForCity, noCityFound } from '@weather-forcast/state/cities/city.actions';
+import { searchForCity } from '@weather-forcast/state/cities/city.actions';
 import { State } from '@weather-forcast/state/state';
 import { isLoadingCities, noCityFoundSelector, selectFoundCities } from '@weather-forcast/state/cities/city.selectors';
 
@@ -32,8 +32,8 @@ export class SearchForCityComponent implements OnInit {
 			map(item => item.cityName),
 			distinctUntilChanged(),
 			tap(cityName => {
-				const dispatchSearchOrnew=cityName?searchForCity({ cityName }):noCityFound()
-				this.store.dispatch(dispatchSearchOrnew);
+				if(cityName)
+					this.store.dispatch(searchForCity({ cityName }));
 			})
 		);
 	}
