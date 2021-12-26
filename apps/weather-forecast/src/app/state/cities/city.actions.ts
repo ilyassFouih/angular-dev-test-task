@@ -7,6 +7,6 @@ export enum CitiesActionsType {
 	isError = '[API] Error in feetch',
 }
 export const searchForCity = createAction(CitiesActionsType.search, props<{ cityName: string }>());
-export const newCityAction = createAction(CitiesActionsType.newCity,props<{cities:CitiesModel[]}>());
+export const newCityAction = createAction(CitiesActionsType.newCity,props<{city:CitiesModel}>());
 export const noCityFound = createAction(CitiesActionsType.noCityFound);
 export const isCityError = createAction(CitiesActionsType.isError);

@@ -12,23 +12,22 @@ export const cityReducer=createReducer(
 	on(searchForCity,(state,{cityName})=>({ 
 		...state,
 		status:CitiesStateStatus.LOADING,
-		cities:[]
 	})),
-	on(newCityAction,((state,{cities})=>({
+	on(newCityAction,((state,{city})=>({
 		...state,
-		cities,
+		city,
 		status:CitiesStateStatus.SUCCESS,
 	}))),
 	on(noCityFound,(state=>({
 		...state,
-		cities:[],
+		city:null,
 		errorMsg:"No city found with the provided city name",
 		status:CitiesStateStatus.NO_CITY_FOUND,
 	}))),
 	on(isCityError,(state=>({
 		...state,
 		status:CitiesStateStatus.INIT,
-		cities:[]
+		city:null
 	})))
 
 )

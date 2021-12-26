@@ -6,7 +6,7 @@ export enum CitiesStateStatus{
 	INIT="INIT_STATE"
 }
 export interface CityState{
-	city:CitiesModel[]
+	city:CitiesModel
 	status:CitiesStateStatus
 	errorMsg:string
 }

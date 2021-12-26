@@ -10,7 +10,7 @@ import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction, 
 export class ForecastTypeAheadComponent {
 	@Input() label: string;
 	@Input() placeholder: string;
-	@Input() foundCities$: Observable<CitiesModel[]>;
+	@Input() foundCity$: Observable<CitiesModel>;
 	@Input() isLoading: boolean;
 	@Input() searchText = '';
 	@Input() noCityFound: string;
@@ -23,7 +23,8 @@ export class ForecastTypeAheadComponent {
 			distinctUntilChanged(),
 			tap(term => this.searchTextChnage.emit(term)),
 			switchMap(term =>
-				this.foundCities$.pipe(map(cities => cities?.map(item => `${item.name}(${item.country})`)))
+				this.foundCity$.pipe(
+					map(city =>city?[`${city.name}(${city.country})`]:[]))
 			)
 		);
 

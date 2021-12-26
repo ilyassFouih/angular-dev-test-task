@@ -13,7 +13,7 @@ import { isLoadingCities, noCityFoundSelector, selectFoundCities } from '@weathe
 	styleUrls: ['./search-for-city.component.css'],
 })
 export class SearchForCityComponent implements OnInit {
-	cities$: Observable<CitiesModel[]>=this.store.select(selectFoundCities)
+	city$: Observable<CitiesModel>=this.store.select(selectFoundCities)
 	isLoadingCities$:Observable<boolean>=this.store.select(isLoadingCities)
 	searchText$: Observable<string>;
 	noCityFound$: Observable<boolean>=this.store.select(noCityFoundSelector)
