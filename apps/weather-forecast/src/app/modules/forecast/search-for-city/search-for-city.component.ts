@@ -16,7 +16,10 @@ export class SearchForCityComponent implements OnInit {
 	city$: Observable<CitiesModel>=this.store.select(selectFoundCities)
 	isLoadingCities$:Observable<boolean>=this.store.select(isLoadingCities)
 	searchText$: Observable<string>;
-	noCityFound$: Observable<boolean>=this.store.select(noCityFoundSelector)
+	noCityFound$: Observable<string>=this.store.select(noCityFoundSelector)
+		.pipe(
+			map(cityFound=>cityFound?'No city found with the provided name' : '')
+		)
 
 	constructor(
 		private activatedRoute: ActivatedRoute, 
