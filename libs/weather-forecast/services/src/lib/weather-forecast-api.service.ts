@@ -19,9 +19,10 @@ export class WeatherForecastApiService {
 	}
 
 	weatherByLongAndLat(lon:number,lat:number,typeWeather:FORECAST_TYPE){
-		const typeWeatherMin=typeWeather.toLowerCase()
+		const toExclud=typeWeather==FORECAST_TYPE.DAILY?FORECAST_TYPE.HOURLY:FORECAST_TYPE.DAILY
+		const typeWeatherMin=toExclud.toLowerCase()
 		return this.httpClient
-			.get<ForecatsWeatherModel>(`${BASE_URL_FORECAST}?lat=${lat}&lon=${lon}&exclude=current,minutely,${typeWeatherMin},alerts&appid={API key}`)
+			.get<ForecatsWeatherModel>(`${BASE_URL_FORECAST}?lat=${lat}&lon=${lon}&exclude=current,minutely,${typeWeatherMin},alerts&appid=${this._apiKey}`)
 	}
 
 }

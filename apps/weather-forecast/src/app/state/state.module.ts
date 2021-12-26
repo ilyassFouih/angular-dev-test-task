@@ -9,12 +9,15 @@ import { CitiesEffects } from './cities/city.effects';
 import { alertReducers } from './alert/alert.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
+import { forecastWeatherReducers } from './forecast-weather/forecast-weather.reducers';
+import { ForecastWeatherEffect } from './forecast-weather/forecast-weather.effects';
 type statewithReducers<T>={
 	[K in keyof T]: ActionReducer<T[K],Action>
 }
 const state:statewithReducers<State>={
 	city:cityReducer,
-	alert:alertReducers
+	alert:alertReducers,
+	weather:forecastWeatherReducers
 }
 
 @NgModule({
@@ -24,7 +27,8 @@ const state:statewithReducers<State>={
 		WeatherForecastServicesModule,
 		StoreModule.forRoot(state),
 		EffectsModule.forRoot([
-			CitiesEffects
+			CitiesEffects,
+			ForecastWeatherEffect
 		]),
 		StoreDevtoolsModule.instrument({
 			maxAge: 25, // Retains last 25 states
