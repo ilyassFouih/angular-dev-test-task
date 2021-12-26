@@ -9,6 +9,7 @@ export class ButtonComponent {
 
 	@Input() text:string
 	@Input() disabled:boolean
+	@Input() loading:boolean
 
 
 }

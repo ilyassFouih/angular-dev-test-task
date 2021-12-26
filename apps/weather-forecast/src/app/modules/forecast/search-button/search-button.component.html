@@ -1,5 +1,6 @@
 <bp-button
 	[disabled]="!disabled$ || (disabled$ | async)"
+	[loading]="isLoading$ | async"
 	class="d-flex h-100 align-items-center"
 	(click)="onSearch()"
 	text="search"

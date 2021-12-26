@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { FORECAST_TYPE } from '@weather-forcast/core/models';
 import { selectCityState, selectFoundCities } from '@weather-forcast/state/cities/city.selectors';
 import { LoadForecastAction } from '@weather-forcast/state/forecast-weather/forecast-weather.actions';
+import { selectIsLoadingForecast } from '@weather-forcast/state/forecast-weather/forecast-weather.selectors';
 import { State } from '@weather-forcast/state/state';
 import { combineLatest, map, Observable, take, tap } from 'rxjs';
 
@@ -14,6 +15,7 @@ import { combineLatest, map, Observable, take, tap } from 'rxjs';
 })
 export class SearchButtonComponent implements OnInit {
 	disabled$: Observable<boolean> = null;
+	isLoading$=this.store.select(selectIsLoadingForecast)
 	constructor(private activatedRoute: ActivatedRoute, private store: Store<State>) {}
 
 	ngOnInit() {
