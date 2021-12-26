@@ -3,7 +3,7 @@ import { WeatherForecastApiService } from "@bp/weather-forecast/services";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, from, map, mergeMap } from "rxjs";
 import { newAlertError } from "../alert/alert.actions";
-import { CitiesActionsType, noCityFound, newCities as newCitiesAction, isCityError} from "./cities.actions"
+import { CitiesActionsType, noCityFound, newCityAction, isCityError} from "./city.actions"
 @Injectable()
 export class CitiesEffects{
 
@@ -17,7 +17,7 @@ export class CitiesEffects{
 						const cities=newCities?newCities:[]
 						if(cities.length==0)
 							return noCityFound()
-						else return  newCitiesAction({cities})
+						else return  newCityAction({cities})
 					}),
 					catchError(error=>from([
 						newAlertError({title:"Ops Error in feetching cities",message:"Please try again later"}),

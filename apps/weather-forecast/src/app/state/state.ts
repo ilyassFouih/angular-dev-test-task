@@ -1,7 +1,7 @@
 import { AlertState } from "./alert/alert.state.model";
-import { CitiesState } from "./cities/cities.state";
+import { CityState } from "./cities/city.state";
 
 export interface State{
-	cities:CitiesState,
+	city:CityState,
 	alert:AlertState
 }

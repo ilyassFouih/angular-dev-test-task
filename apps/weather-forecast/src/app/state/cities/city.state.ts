@@ -5,8 +5,8 @@ export enum CitiesStateStatus{
 	NO_CITY_FOUND="NO_CITY_FOUND",
 	INIT="INIT_STATE"
 }
-export interface CitiesState{
-	cities:CitiesModel[]
+export interface CityState{
+	city:CitiesModel[]
 	status:CitiesStateStatus
 	errorMsg:string
 }

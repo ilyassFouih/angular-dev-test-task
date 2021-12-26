@@ -3,9 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CitiesModel } from '@weather-forcast/core/models';
 import { map, Observable, tap } from 'rxjs';
-import { searchForCity, newCities } from '@weather-forcast/state/cities/cities.actions';
+import { searchForCity, noCityFound } from '@weather-forcast/state/cities/city.actions';
 import { State } from '@weather-forcast/state/state';
-import { isLoadingCities, noCityFoundSelector, selectFoundCities } from '@weather-forcast/state/cities/cities.selectors';
+import { isLoadingCities, noCityFoundSelector, selectFoundCities } from '@weather-forcast/state/cities/city.selectors';
 
 @Component({
 	selector: 'bp-search-for-city',
@@ -28,13 +28,13 @@ export class SearchForCityComponent implements OnInit {
 		this.searchText$ = this.activatedRoute.queryParams.pipe(
 			map(item => item.cityName),
 			tap(cityName => {
-				const dispatchSearchOrnew=cityName?searchForCity({ cityName }):newCities({ cities: []})
+				const dispatchSearchOrnew=cityName?searchForCity({ cityName }):noCityFound()
 				this.store.dispatch(dispatchSearchOrnew);
 			})
 		);
 	}
 
 	onSearchCityChanged(cityName: string) {
-		this.router.navigate([], { queryParams: { cityName } });
+		this.router.navigate([], { queryParams: { cityName },queryParamsHandling:"merge"});
 	}
 }

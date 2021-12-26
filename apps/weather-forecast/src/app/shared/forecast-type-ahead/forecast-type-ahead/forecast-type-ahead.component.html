@@ -1,8 +1,7 @@
 <div class="form-group">
 	<label> {{ label }} </label>
 	<input
-		[ngModel]="searchText"
-		(ngModelChange)="onChosedCity($event)"
+		[(ngModel)]="searchText"
 		[ngbTypeahead]="onSearchForCity"
 		type="text"
 		class="form-control"

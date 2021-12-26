@@ -1,20 +1,20 @@
 import { createReducer, on } from "@ngrx/store";
-import { searchForCity ,newCities, noCityFound, isCityError} from "./cities.actions";
-import { CitiesState, CitiesStateStatus } from "./cities.state";
+import { searchForCity ,newCityAction, noCityFound, isCityError} from "./city.actions";
+import {  CitiesStateStatus, CityState } from "./city.state";
 
-export const initCitiesState:CitiesState={
-	cities:[],
+export const initCityState:CityState={
+	city:null,
 	errorMsg:"",
 	status:CitiesStateStatus.INIT
 }
-export const CitiesReducer=createReducer(
-	initCitiesState,
+export const cityReducer=createReducer(
+	initCityState,
 	on(searchForCity,(state,{cityName})=>({ 
 		...state,
 		status:CitiesStateStatus.LOADING,
 		cities:[]
 	})),
-	on(newCities,((state,{cities})=>({
+	on(newCityAction,((state,{cities})=>({
 		...state,
 		cities,
 		status:CitiesStateStatus.SUCCESS,

@@ -15,7 +15,7 @@ export class WeatherForecastApiService {
 
 	searchForCityByName(cityName:string){
 		return this.httpClient
-			.get<CitiesModel[]>(`${BASE_URL_CITY}?q=${cityName}&limit=5&appid=${this._apiKey}`)
+			.get<CitiesModel[]>(`${BASE_URL_CITY}?q=${cityName}&limit=1&appid=${this._apiKey}`)
 	}
 
 	weatherByLongAndLat(lon:number,lat:number,typeWeather:FORECAST_TYPE){
