@@ -22,7 +22,7 @@ export class WeatherForecastApiService {
 		const toExclud=typeWeather==FORECAST_TYPE.DAILY?FORECAST_TYPE.HOURLY:FORECAST_TYPE.DAILY
 		const typeWeatherMin=toExclud.toLowerCase()
 		return this.httpClient
-			.get<ForecatsWeatherModel>(`${BASE_URL_FORECAST}?lat=${lat}&lon=${lon}&exclude=current,minutely,${typeWeatherMin},alerts&appid=${this._apiKey}`)
+			.get<ForecatsWeatherModel>(`${BASE_URL_FORECAST}?lat=${lat}&lon=${lon}&exclude=minutely,${typeWeatherMin},alerts&appid=${this._apiKey}`)
 	}
 
 }
