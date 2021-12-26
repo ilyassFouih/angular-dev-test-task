@@ -9,6 +9,7 @@ import { ForecastTypeAheadModule } from '@weather-forcast/shared/forecast-type-a
 import { SearchForCityComponent } from './search-for-city/search-for-city.component';
 import { SelectForecastTypeComponent } from './select-forecast-type/select-forecast-type.component';
 import { ForecastResultTableComponent } from './forecast-result-table/forecast-result-table.component';
+import { SearchButtonComponent } from './search-button/search-button.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ForecastResultTableComponent } from './forecast-result-table/forecast-r
 		WeatherForecastComponent,
 		SearchForCityComponent,
 		SelectForecastTypeComponent,
-		ForecastResultTableComponent
+		ForecastResultTableComponent,
+		SearchButtonComponent
 	],
 	imports: [
 		CommonModule,

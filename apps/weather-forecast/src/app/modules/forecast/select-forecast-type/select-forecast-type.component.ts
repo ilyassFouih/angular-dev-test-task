@@ -14,7 +14,7 @@ export class SelectForecastTypeComponent {
 	constructor(
 		private router:Router
 	){
-
+		
 	}
 
 	onNewTypeSelected(forecastType:string){

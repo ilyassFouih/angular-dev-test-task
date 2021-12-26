@@ -1,0 +1,7 @@
+<bp-button
+	[disabled]="!disabled$ || (disabled$ | async)"
+	class="d-flex h-100 align-items-center"
+	(click)="onSearch()"
+	text="search"
+>
+</bp-button>

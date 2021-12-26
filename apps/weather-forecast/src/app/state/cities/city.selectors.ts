@@ -14,3 +14,7 @@ export const noCityFoundSelector=createSelector(
 	(appState:State)=>appState.city,
 	(state:CityState)=>state.status==CitiesStateStatus.NO_CITY_FOUND,
 )
+export const selectCityState=createSelector(
+	(appState:State)=>appState.city,
+	(city:CityState)=>city,
+)
