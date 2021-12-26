@@ -9,5 +9,6 @@ import { ForecastTableConfig} from "@weather-forcast/core/models";
 export class ForecastTableUIComponent {
 
 	@Input() forcastTableConfig:ForecastTableConfig=FORECAST_TABLE_MOCK
+	@Input() isLoading=false
 
 }

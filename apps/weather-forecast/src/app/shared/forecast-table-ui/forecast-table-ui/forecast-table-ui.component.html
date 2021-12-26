@@ -10,7 +10,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="text-center">
+				<tr *ngIf="!isLoading; else loading" class="text-center">
 					<td scope="row">
 						<h3>{{ forcastTableConfig?.city?.name }}</h3>
 						<h4>({{ forcastTableConfig?.city?.country }})</h4>
@@ -20,6 +20,16 @@
 						{{ item?.colTemp }}
 					</td>
 				</tr>
+				<ng-template #loading>
+					<tr>
+						<td class="text-center" [colSpan]="2 + forcastTableConfig.tempColumns.length">
+							<div>
+								<img width="50px" src="assets/svgs/spinner-transparent.svg" />
+								Loading forecast...
+							</div>
+						</td>
+					</tr>
+				</ng-template>
 			</tbody>
 		</table>
 	</div>
