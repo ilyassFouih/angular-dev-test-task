@@ -17,11 +17,15 @@ export class ForecastTypeAheadComponent {
 
 	onSearchForCity: OperatorFunction<string, string[]> = (text$: Observable<string>) =>
 		text$.pipe(
-			debounceTime(500),
+			debounceTime(700),
 			distinctUntilChanged(),
 			tap(term => this.searchTextChnage.emit(term)),
 			switchMap(term =>
-				this.foundCities$.pipe(map(cities => cities.map(item => `${item.name}(${item.local_names?.en})`)))
+				this.foundCities$.pipe(map(cities => cities?.map(item => `${item.name}(${item.country})`)))
 			)
 		);
+
+	onChosedCity(city:string){
+		//this.searchTextChnage.emit(city)
+	}
 }

@@ -6,7 +6,6 @@ import { map, Observable, tap } from 'rxjs';
 import { searchForCity, newCities } from '@weather-forcast/state/cities/cities.actions';
 import { State } from '@weather-forcast/state/state';
 import { isLoadingCities, selectFoundCities } from '@weather-forcast/state/cities/cities.selectors';
-import { CITIES_MOCKS } from '@weather-forcast/core/mocks/cities.mocks';
 
 @Component({
 	selector: 'bp-search-for-city',
@@ -28,8 +27,8 @@ export class SearchForCityComponent implements OnInit {
 		this.searchText$ = this.activatedRoute.queryParams.pipe(
 			map(item => item.cityName),
 			tap(cityName => {
-				if (cityName) this.store.dispatch(searchForCity({ cityName }));
-				else this.store.dispatch(newCities({ cities: CITIES_MOCKS}));
+				const dispatchSearchOrnew=cityName?searchForCity({ cityName }):newCities({ cities: []})
+				this.store.dispatch(dispatchSearchOrnew);
 			})
 		);
 	}
