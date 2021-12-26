@@ -2,6 +2,8 @@
 	<div class="card-header bg-dark text-white p-4 text-center">
 		<h2>Welcome to your weather forecast App!</h2>
 	</div>
+	<bp-alert [type]="type$ | async" [title]="title$ | async" [message]="message$ | async"></bp-alert>
+	{{ type$ | async }}
 	<div class="card-body">
 		<router-outlet></router-outlet>
 	</div>
