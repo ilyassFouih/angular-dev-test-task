@@ -8,7 +8,10 @@
 		aria-describedby="helpId"
 		[placeholder]="placeholder"
 	/>
-	<small class="float-right">
+	<small *ngIf="foundCity$ | async as foundCity" class="float-right text-info">
+		Found city: {{ foundCity?.name }}
+	</small>
+	<small class="float-right text-danger">
 		{{ noCityFound }}
 	</small>
 	<small *ngIf="isLoading" class="form-text text-muted float-right">
