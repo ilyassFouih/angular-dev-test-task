@@ -5,7 +5,7 @@ import { CitiesModel } from '@weather-forcast/core/models';
 import { map, Observable, tap } from 'rxjs';
 import { searchForCity, newCities } from '@weather-forcast/state/cities/cities.actions';
 import { State } from '@weather-forcast/state/state';
-import { isLoadingCities, selectFoundCities } from '@weather-forcast/state/cities/cities.selectors';
+import { isLoadingCities, noCityFoundSelector, selectFoundCities } from '@weather-forcast/state/cities/cities.selectors';
 
 @Component({
 	selector: 'bp-search-for-city',
@@ -16,6 +16,7 @@ export class SearchForCityComponent implements OnInit {
 	cities$: Observable<CitiesModel[]>=this.store.select(selectFoundCities)
 	isLoadingCities$:Observable<boolean>=this.store.select(isLoadingCities)
 	searchText$: Observable<string>;
+	noCityFound$: Observable<boolean>=this.store.select(noCityFoundSelector)
 
 	constructor(
 		private activatedRoute: ActivatedRoute, 

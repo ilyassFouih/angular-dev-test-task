@@ -9,6 +9,9 @@
 		aria-describedby="helpId"
 		[placeholder]="placeholder"
 	/>
+	<small>
+		{{ noCityFound }}
+	</small>
 	<small *ngIf="isLoading" class="form-text text-muted">
 		<img width="35px" src="assets/svgs/spinner.svg" />
 		Loading...

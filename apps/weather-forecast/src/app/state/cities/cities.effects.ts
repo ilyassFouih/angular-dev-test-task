@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { WeatherForecastApiService } from "@bp/weather-forecast/services";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap, of } from "rxjs";
-import { CitiesActionsType } from "./cities.actions"
+import { catchError, from, map, mergeMap } from "rxjs";
+import { newAlertError } from "../alert/alert.actions";
+import { CitiesActionsType, noCityFound, newCities as newCitiesAction, isCityError} from "./cities.actions"
 @Injectable()
 export class CitiesEffects{
 
@@ -15,10 +16,13 @@ export class CitiesEffects{
 					map(newCities=>{
 						const cities=newCities?newCities:[]
 						if(cities.length==0)
-							return {type:CitiesActionsType.noCityFound}
-						else return  {type:CitiesActionsType.newCitiesFound,cities}
+							return noCityFound()
+						else return  newCitiesAction({cities})
 					}),
-					catchError(error=>of({type:CitiesActionsType.isError,errorMessage:"Ops Error in loading cities, please try again later"}))
+					catchError(error=>from([
+						newAlertError({title:"Ops Error in feetching cities",message:"Please try again later"}),
+						isCityError()
+					]))
 				))
 		)
 	)

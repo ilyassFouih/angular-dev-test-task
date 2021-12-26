@@ -2,6 +2,7 @@
 	label="city name:"
 	placeholder="enter a city name ..."
 	[foundCities$]="cities$"
+	[noCityFound]="(noCityFound$ | async) ? 'No city found with the provided name' : ''"
 	[searchText]="searchText$ | async"
 	(searchTextChnage)="onSearchCityChanged($event)"
 	[isLoading]="isLoadingCities$ | async"

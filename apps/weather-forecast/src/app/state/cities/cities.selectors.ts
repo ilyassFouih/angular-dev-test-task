@@ -10,3 +10,7 @@ export const isLoadingCities=createSelector(
 	(appState:State)=>appState.cities,
 	(state:CitiesState)=>state.status==CitiesStateStatus.LOADING,
 )
+export const noCityFoundSelector=createSelector(
+	(appState:State)=>appState.cities,
+	(state:CitiesState)=>state.status==CitiesStateStatus.NO_CITY_FOUND,
+)

@@ -13,6 +13,7 @@ export class ForecastTypeAheadComponent {
 	@Input() foundCities$: Observable<CitiesModel[]>;
 	@Input() isLoading: boolean;
 	@Input() searchText = '';
+	@Input() noCityFound:string;
 	@Output() searchTextChnage: EventEmitter<string> = new EventEmitter();
 
 	onSearchForCity: OperatorFunction<string, string[]> = (text$: Observable<string>) =>
