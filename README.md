@@ -40,7 +40,7 @@ https://openweathermap.org/api/geocoding-api
     <app-typeahead-ui> </app-typeahead-ui>
     ```
     -   NgBootstrap for the UI (simple and fast)
--   [] Dev excution
+-   [x] Dev excution
     -   [x] Architecture & generating components.
         -   [x] install and config NgBoostrap
         -   [x] install NGRX
@@ -52,10 +52,10 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Select UI
         -   [x] Button
         -   [x] TypeAhead and select UI
-    -   [] state & logic
-        -   [] Route, state and binding logic for typeahead.
-        -   [] Route, state and binding logic for forecastType.
-        -   [] Route, state and lodings logic for table result.
+    -   [x] state & logic
+        -   [x] Route, state and binding logic for typeahead.
+        -   [x] Route, state and binding logic for forecastType.
+        -   [x] Route, state and lodings logic for table result.
 -   [x] CD to azure
     -   [x] creating and configuting azur account.
     -   [x] Github Action config.
