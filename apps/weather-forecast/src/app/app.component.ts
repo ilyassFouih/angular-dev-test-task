@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectAlertMessage, selectAlertTitle, selectAlertType } from './state/alert/alert.selectors';
+import { State } from './state/state';
 
 @Component({
 	selector: 'bp-root',
@@ -6,5 +10,13 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-	title = 'weather-forecast';
+	type$=this.store.select(selectAlertType)
+	title$:Observable<string>=this.store.select(selectAlertTitle)
+	message$:Observable<string>=this.store.select(selectAlertMessage)
+
+	constructor(
+		private store:Store<State>
+	){
+	}
+	
 }

@@ -1,0 +1,6 @@
+<button [disabled]="disabled" type="button" class="btn btn-block pl-4 pr-4 pt-2 pb-2 btn-primary">
+	<ng-container *ngIf="!loading; else loadingTmp">
+		{{ text }}
+	</ng-container>
+	<ng-template #loadingTmp> <img width="25px" src="assets/svgs/spinner-transparent.svg" />Loding.. </ng-template>
+</button>

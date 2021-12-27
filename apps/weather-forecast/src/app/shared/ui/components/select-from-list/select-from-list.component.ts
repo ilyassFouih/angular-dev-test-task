@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
-	selector: 'bp-select-from-list',
+	selector: 'bp-select-from-list-ui',
 	templateUrl: './select-from-list.component.html',
 	styleUrls: ['./select-from-list.component.css']
 })

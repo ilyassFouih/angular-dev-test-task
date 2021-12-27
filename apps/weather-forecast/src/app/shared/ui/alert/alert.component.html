@@ -1,0 +1,6 @@
+<ng-container *ngIf="!closeAlert">
+	<ngb-alert #alert [type]="type" [dismissible]="true" class="p-3 text-center">
+		<h3>{{ title }}</h3>
+		<p>{{ message }}</p>
+	</ngb-alert>
+</ng-container>

@@ -1,7 +1,16 @@
-<bp-select-from-list
-	[(selected)]="selected"
-	[options]="['Daily', 'Hourly']"
-	label="Forecast type"
-></bp-select-from-list>
-<bp-forecast-table-ui></bp-forecast-table-ui>
-{{ selected }}
+<div class="container h-100 d-flex justify-content-center flex-column">
+	<div class="row mb-3">
+		<div class="rounded no-border border-right border-left border-info shadow w-100">
+			<div class="card-body row">
+				<bp-search-for-city class="col-sm-12 col-md-5"></bp-search-for-city>
+				<bp-select-forecast-type class="col-sm-12 col-md-4"></bp-select-forecast-type>
+				<bp-search-button class="col-sm-12 col-md-3"></bp-search-button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<bp-forecast-result-table></bp-forecast-result-table>
+		</div>
+	</div>
+</div>

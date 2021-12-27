@@ -1,0 +1,21 @@
+<div class="form-group">
+	<label> {{ label }} </label>
+	<input
+		[(ngModel)]="searchText"
+		[ngbTypeahead]="onSearchForCity"
+		type="text"
+		class="form-control"
+		aria-describedby="helpId"
+		[placeholder]="placeholder"
+	/>
+	<small *ngIf="foundCity$ | async as foundCity" class="float-right text-info">
+		Found city: {{ foundCity?.name }}
+	</small>
+	<small class="float-right text-danger">
+		{{ noCityFound }}
+	</small>
+	<small *ngIf="isLoading" class="form-text text-muted float-right">
+		<img width="35px" src="assets/svgs/spinner.svg" />
+		Loading...
+	</small>
+</div>

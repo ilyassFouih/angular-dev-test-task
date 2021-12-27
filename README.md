@@ -35,6 +35,10 @@ https://openweathermap.org/api/geocoding-api
     ```
     -   We need to integrate NGRX.
     -   Type and search component for searching and displying cities.
+    ```html
+    this component handles Ui logic. displaying searcing...| handling list of found results | handling no found city.
+    <app-typeahead-ui> </app-typeahead-ui>
+    ```
     -   NgBootstrap for the UI (simple and fast)
 -   [] Dev excution
     -   [x] Architecture & generating components.
@@ -43,8 +47,16 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Folders structure
         -   [x] Config routes/modules (not found, forcast, shared)
         -   [x] Models
-    -   [] UI
+    -   [x] UI
         -   [x] Table forecast UI
         -   [x] Select UI
-        -   [] TypeAhead and select UI
+        -   [x] Button
+        -   [x] TypeAhead and select UI
     -   [] state & logic
+        -   [] Route, state and binding logic for typeahead.
+        -   [] Route, state and binding logic for forecastType.
+        -   [] Route, state and lodings logic for table result.
+-   [x] CD to azure
+    -   [x] creating and configuting azur account.
+    -   [x] Github Action config.
+    -   [x] automatic deploy to AZURE static site when commit in prod

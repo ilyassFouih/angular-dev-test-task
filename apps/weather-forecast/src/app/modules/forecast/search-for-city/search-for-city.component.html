@@ -1,0 +1,10 @@
+<bp-forecast-type-ahead-ui
+	label="city name:"
+	placeholder="enter a city name ..."
+	[foundCity$]="city$"
+	[noCityFound]="noCityFound$ | async"
+	[searchText]="searchText$ | async"
+	(searchTextChnage)="onSearchCityChanged($event)"
+	[isLoading]="isLoadingCities$ | async"
+>
+</bp-forecast-type-ahead-ui>
