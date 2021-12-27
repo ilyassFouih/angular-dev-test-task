@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CitiesModel, FORECAST_TYPE,ForecatsWeatherModel} from "@weather-forcast/core/models";
 
-const BASE_URL_CITY="http://api.openweathermap.org/geo/1.0/direct"
+
+const BASE_URL_CITY="https://api.openweathermap.org/geo/1.0/direct"
 const BASE_URL_FORECAST="https://api.openweathermap.org/data/2.5/onecall"
 
 @Injectable()
