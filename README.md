@@ -56,6 +56,7 @@ https://openweathermap.org/api/geocoding-api
         -   [x] Route, state and binding logic for typeahead.
         -   [x] Route, state and binding logic for forecastType.
         -   [x] Route, state and lodings logic for table result.
+
 -   [x] CD to azure
     -   [x] creating and configuting azur account.
     -   [x] Github Action config.
